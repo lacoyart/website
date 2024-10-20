@@ -3,78 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lacoyart Shoplifting Detection</title>
+    <title>lacoyart.ai - Launching Soon</title>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color: white;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            text-align: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
         }
-        header {
-            background-color: #007bff;
-            color: white;
-            width: 100%;
-            padding: 1em 0;
+
+        /* Fullscreen video background */
+        .background {
             position: fixed;
             top: 0;
             left: 0;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-        }
-        p {
-            max-width: 600px;
-            margin: 0.5em 0;
-        }
-        footer {
-            background-color: #333;
-            color: white;
             width: 100%;
-            padding: 1em 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            text-align: center;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
         }
+
+        .background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Centered text */
         .content {
-            margin-top: 100px; /* Adjusts for fixed header */
-            margin-bottom: 60px; /* Adjusts for fixed footer */
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            z-index: 1;
+        }
+
+        .content h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 80px;
+        }
+
+        /* Subscription section */
+        .subscription {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            z-index: 1;
+            width: 100%;
+            position: relative;
+        }
+
+        .subscription h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .subscription p {
+            margin-bottom: 10px;
+        }
+
+        .subscription input[type="email"] {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 50%;
+        }
+
+        .subscription button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .subscription button:hover {
+            background-color: #218838;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            z-index: 1;
+            position: relative;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h2>Lacoyart Shoplifting Detection</h2>
-    </header>
-
-    <div class="content">
-        <h1>Shoplifting Detection in Real-Time</h1>
-        <p>Catch shoplifters from your phone, tablet, or desktop.</p>
-        <p>We care about you and your customer’s privacy.</p>
-        <h2>Racial profiling is a thing of the past</h2>
-        <p>Lacoyart shoplifting detection does not use skin color, race, or clothing to catch shoplifters.</p>
-        <h2>Your data remains your data</h2>
-        <p>Lacoyart does not get access to your store footage, keeping your privacy.</p>
-        <h2>Your customers are safe</h2>
-        <p>We do not store any information related to you or your customers.</p>
+    <!-- Background video -->
+    <div class="background">
+        <video autoplay muted loop>
+            <source src="./857251-hd_1620_1080_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
+    <!-- Main content with centered text -->
+    <div class="content">
+        <h1>Launching Soon</h1>
+        <p>Receive live alerts of shoplifters on your phone, tablet or desktop.</p>
+        <p>Helping commercial food retail companies curb theft and optimize their revenue through generative AI, movement tracking, object recognition, and gaining insights using machine learning.</p>    </div>
+
+    <!-- Subscription Section -->
+    <div class="subscription">
+        <h2>Subscribe</h2>
+        <p>Sign up to be the first to know about our soft launch events.</p>
+        <form id="subscription-form">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; <span id="year"></span> Lacoyart.ai. All rights reserved.</p>
+        Copyright © 2024 lacoyart.ai - All Rights Reserved.
     </footer>
 
     <script>
-        // Update the year in the footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('subscription-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message');
+            
+            message.innerHTML = `Thank you for subscribing with: ${email}`;
+        });
     </script>
 </body>
 </html>
