@@ -3,10 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
+    <title>Lacoyart Shoplifting Detection</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            padding: 1em 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        p {
+            max-width: 600px;
+            margin: 0.5em 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            width: 100%;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+        }
+        .content {
+            margin-top: 100px; /* Adjusts for fixed header */
+            margin-bottom: 60px; /* Adjusts for fixed footer */
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My GitHub Pages Site!</h1>
-    <p>This is a simple static website hosted on GitHub Pages.</p>
+    <header>
+        <h2>Lacoyart Shoplifting Detection</h2>
+    </header>
+
+    <div class="content">
+        <h1>Shoplifting Detection in Real-Time</h1>
+        <p>Catch shoplifters from your phone, tablet, or desktop.</p>
+        <p>We care about you and your customer’s privacy.</p>
+        <h2>Racial profiling is a thing of the past</h2>
+        <p>Lacoyart shoplifting detection does not use skin color, race, or clothing to catch shoplifters.</p>
+        <h2>Your data remains your data</h2>
+        <p>Lacoyart does not get access to your store footage, keeping your privacy.</p>
+        <h2>Your customers are safe</h2>
+        <p>We do not store any information related to you or your customers.</p>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Lacoyart.ai. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Update the year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
